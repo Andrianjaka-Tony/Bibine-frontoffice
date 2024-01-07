@@ -1,14 +1,15 @@
-import Hero from "./components/hero/Hero";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="App">
-      <Hero
-        title="./images/hero/hero-title.png"
-        subtitle="Elevez votre conduite, trouver votre chemin"
-        image="./images/hero/hero-image.png"
-      />
-    </div>
+    <>
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
