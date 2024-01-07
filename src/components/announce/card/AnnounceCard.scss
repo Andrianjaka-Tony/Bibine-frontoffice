@@ -1,0 +1,79 @@
+.announce-card {
+  &-photo {
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  &-content {
+    padding: 15px;
+  }
+
+  &-brand,
+  &-category {
+    font-size: 14px;
+    font-family: Open sans regular;
+  }
+
+  &-model {
+    font-size: 22px;
+    font-family: Open sans extrabold;
+    margin-top: 5px;
+  }
+
+  &-profile {
+    cursor: pointer;
+    width: fit-content;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    &-photo {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &-name {
+      margin-left: 10px;
+      font-size: 16px;
+      font-family: Open sans bold;
+    }
+  }
+
+  &-details {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .label {
+        font-size: 12px;
+        font-family: Open sans regular;
+      }
+
+      .value {
+        font-size: 24px;
+        font-family: Open sans condensed bold;
+        margin-top: -5px;
+      }
+    }
+  }
+
+  &-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .icon {
+      cursor: pointer;
+      width: 25px;
+      height: auto;
+    }
+  }
+}

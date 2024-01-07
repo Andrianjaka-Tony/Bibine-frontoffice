@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: inherit;
 }
 
 *::-webkit-scrollbar {
@@ -34,4 +35,24 @@ body {
 .section {
   width: 100vw;
   padding: 0 50px;
+}
+
+@font-face {
+  font-family: Open sans regular;
+  src: url(./fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Open sans extrabold;
+  src: url(./fonts/OpenSans-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: Open sans bold;
+  src: url(./fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: Open sans condensed bold;
+  src: url(./fonts/OpenSans_Condensed-Bold.ttf);
 }
