@@ -1,6 +1,6 @@
 import { Announce } from "../components/announce/card/AnnounceCard";
 
-const datas: Announce[] = [
+const announces: Announce[] = [
   {
     photoes: ["./images/hero/hero-image.png"],
     brand: "Fruit",
@@ -99,4 +99,4 @@ const datas: Announce[] = [
   },
 ];
 
-export default datas;
+export default announces;

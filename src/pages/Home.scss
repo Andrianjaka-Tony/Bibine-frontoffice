@@ -1,11 +1,25 @@
-.announce-list-section {
-  margin-top: 60px;
-  margin-bottom: 300px;
-
+.home-section {
   .title {
     font-size: 32px;
     font-family: Open sans bold;
     width: 100%;
     margin-bottom: 30px;
+  }
+}
+
+.announce-list-section {
+  margin-top: 60px;
+  margin-bottom: 300px;
+}
+
+.blog-list-section {
+  margin-bottom: 300px;
+
+  .blog-list {
+    margin-top: 50px;
+  }
+
+  .hero-btn {
+    margin-top: 90px;
   }
 }
