@@ -1,10 +1,11 @@
 import { FunctionComponent } from "react";
 import "./Hero.scss";
+import Link from "../link/Link";
 
 interface Props {
-  title: "";
-  subtitle: "";
-  image: "";
+  title: string;
+  subtitle: string;
+  image: string;
 }
 
 const Hero: FunctionComponent<Props> = ({
@@ -17,6 +18,9 @@ const Hero: FunctionComponent<Props> = ({
       <img src={title} className="hero-title" alt="Hero title" />
       <p className="hero-subtitle">{subtitle}</p>
       <img src={image} className="hero-image" alt="Hero illustration" />
+      <div className="hero-btn">
+        <Link onClick={() => {}} text={"Commencer"} />
+      </div>
     </section>
   );
 };

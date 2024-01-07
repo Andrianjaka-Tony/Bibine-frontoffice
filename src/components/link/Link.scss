@@ -1,0 +1,36 @@
+.link {
+  position: relative;
+  font-size: 24px;
+  font-family: Open sans regular;
+  width: fit-content;
+  cursor: pointer;
+  padding-bottom: 3px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    opacity: 0.3;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: black;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 150ms;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
