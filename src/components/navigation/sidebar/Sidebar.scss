@@ -1,0 +1,59 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #111;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  transform-origin: top;
+
+  &-container {
+    height: 100%;
+    width: 45%;
+  }
+
+  .image-container {
+    position: relative;
+    overflow: hidden;
+
+    &-hidder {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #111;
+      transform-origin: bottom;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-items {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+  }
+
+  .close-icon-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+
+  &-close-btn {
+    fill: white;
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+  }
+}
