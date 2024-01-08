@@ -1,8 +1,8 @@
 import { FunctionComponent, MouseEventHandler } from "react";
-import { AiOutlineHeart } from "react-icons/ai";
-import { FaArrowRight } from "react-icons/fa";
 import "./AnnounceCard.scss";
 import PriceParser from "../../../helpers/PriceHelper";
+import Go from "../../../icons/Go";
+import Favori from "../../../icons/Favori";
 
 export interface Announce {
   photoes: string[];
@@ -17,7 +17,7 @@ export interface Announce {
   };
   price: number;
   note: number;
-  onLike: MouseEventHandler;
+  onFavorite: MouseEventHandler;
   onClick: MouseEventHandler;
 }
 
@@ -34,7 +34,7 @@ const AnnounceCard: FunctionComponent<Announce> = ({
   },
   price = 0,
   note = 0,
-  onLike = () => {},
+  onFavorite = () => {},
   onClick = () => {},
 }) => {
   return (
@@ -69,8 +69,8 @@ const AnnounceCard: FunctionComponent<Announce> = ({
           </span>
         </div>
         <div className="announce-card-icons">
-          <AiOutlineHeart className="icon" onClick={onLike} />
-          <FaArrowRight className="icon" onClick={onClick} />
+          <Favori className="icon" onClick={onFavorite} />
+          <Go className="icon" onClick={onClick} />
         </div>
       </div>
     </div>

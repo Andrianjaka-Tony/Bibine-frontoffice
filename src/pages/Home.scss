@@ -7,14 +7,16 @@
   }
 }
 
-.announce-list-section {
-  margin-top: 60px;
+.home-section {
   margin-bottom: 300px;
 }
 
-.blog-list-section {
-  margin-bottom: 300px;
+.announce-list-section,
+.team-section {
+  margin-top: 60px;
+}
 
+.blog-list-section {
   .blog-list {
     margin-top: 50px;
   }

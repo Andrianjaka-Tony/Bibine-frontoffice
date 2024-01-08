@@ -1,13 +1,11 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, SVGProps } from "react";
 
-interface Props {
-  className: string;
-}
+interface Props extends SVGProps<SVGSVGElement> {}
 
-const Go: FunctionComponent<Props> = ({ className = "" }) => {
+const Go: FunctionComponent<Props> = (props) => {
   return (
     <svg
-      className={className}
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 60.05 60.17"
     >

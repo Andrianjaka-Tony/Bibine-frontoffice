@@ -8,16 +8,21 @@ import AnnounceList from "../components/announce/list/AnnounceList";
 import Link from "../components/link/Link";
 import { Blog } from "../components/blog/card/BlogCard";
 import BlogList from "../components/blog/list/BlogList";
+import { Team } from "../components/team/card/TeamCard";
+import teamsData from "../data/team-data";
+import TeamList from "../components/team/list/TeamList";
 
 interface Props {}
 
 export const Home: FunctionComponent<Props> = () => {
   const [announces, setAnnounces] = useState<Announce[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [teams, setTeams] = useState<Team[]>([]);
 
   useEffect(() => {
     setAnnounces(announcesData);
     setBlogs(blogsData);
+    setTeams(teamsData);
   }, []);
 
   return (
@@ -43,6 +48,13 @@ export const Home: FunctionComponent<Props> = () => {
         <div className="hero-btn">
           <Link onClick={() => {}} text={"Rejoindre la communauté"} />
         </div>
+      </section>
+      <section className="section">
+        <h1 className="title">A propos</h1>
+      </section>
+      <section className="section home-section team-section">
+        <h2 className="title">Equipe</h2>
+        <TeamList teams={teams} />
       </section>
     </>
   );

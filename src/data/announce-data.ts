@@ -14,7 +14,7 @@ const announces: Announce[] = [
     },
     price: 1000000,
     note: 9.5,
-    onLike: () => {},
+    onFavorite: () => {},
     onClick: () => {},
   },
   {
@@ -30,7 +30,7 @@ const announces: Announce[] = [
     },
     price: 1000000,
     note: 9.5,
-    onLike: () => {},
+    onFavorite: () => {},
     onClick: () => {},
   },
   {
@@ -46,7 +46,7 @@ const announces: Announce[] = [
     },
     price: 1000000,
     note: 9.5,
-    onLike: () => {},
+    onFavorite: () => {},
     onClick: () => {},
   },
   {
@@ -62,7 +62,7 @@ const announces: Announce[] = [
     },
     price: 1000000,
     note: 9.5,
-    onLike: () => {},
+    onFavorite: () => {},
     onClick: () => {},
   },
   {
@@ -78,7 +78,7 @@ const announces: Announce[] = [
     },
     price: 1000000,
     note: 9.5,
-    onLike: () => {},
+    onFavorite: () => {},
     onClick: () => {},
   },
   {
@@ -94,7 +94,7 @@ const announces: Announce[] = [
     },
     price: 1000000,
     note: 9.5,
-    onLike: () => {},
+    onFavorite: () => {},
     onClick: () => {},
   },
 ];
