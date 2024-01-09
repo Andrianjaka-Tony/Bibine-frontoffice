@@ -1,0 +1,106 @@
+.announce {
+  width: 100vw;
+  padding: 40px 50px 225px 50px;
+
+  &-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    &-user {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      &-image {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+
+      &-name {
+        font-family: Open sans bold;
+        font-size: 18px;
+      }
+    }
+
+    &-icons {
+      display: flex;
+      gap: 15px;
+
+      svg {
+        width: 25px;
+        height: auto;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-centered-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-brand {
+    font-family: Open sans regular;
+    font-size: 22px;
+  }
+
+  &-model {
+    font-size: 72px;
+    text-transform: uppercase;
+    font-family: Open sans bold;
+    line-height: 1;
+  }
+
+  &-year {
+    font-family: Open sans condensed bold;
+    font-size: 22px;
+  }
+
+  &-values {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+
+    .announce-value {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      p {
+        line-height: 1;
+      }
+
+      .label {
+        font-family: Open sans regular;
+        font-size: 14px;
+      }
+
+      .value {
+        font-family: Open sans condensed bold;
+        font-size: 32px;
+      }
+    }
+  }
+
+  &-images {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+
+    &-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 3%;
+    }
+  }
+}

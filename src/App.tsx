@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Lenis from "@studio-freight/lenis";
 import Navigation from "./components/navigation/Navigation";
+import Announce from "./pages/Announce";
 
 function App() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/announce/:id" element={<Announce />} />
       </Routes>
     </>
   );

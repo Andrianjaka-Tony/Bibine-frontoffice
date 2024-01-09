@@ -1,4 +1,4 @@
-const PriceParser = (price: string | number) => {
+const PriceParser = (price: string | number | undefined) => {
   let response: string = "";
   price = `${price}`;
   let counter: number = 0;

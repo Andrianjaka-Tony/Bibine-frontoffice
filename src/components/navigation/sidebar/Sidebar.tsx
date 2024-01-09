@@ -37,14 +37,14 @@ const Sidebar: FunctionComponent<Props> = ({ setSidebarOpen }) => {
       transition: {
         ease: "easeOut",
         delay: 0.3,
-        duration: 0.3,
+        duration: 0.6,
       },
     },
     exit: {
       scaleY: 1,
       transition: {
         ease: "easeOut",
-        duration: 0.3,
+        duration: 0.6,
       },
     },
   };
@@ -53,15 +53,14 @@ const Sidebar: FunctionComponent<Props> = ({ setSidebarOpen }) => {
     initial: {},
     animate: {
       transition: {
-        staggerChildren: 0.03,
+        staggerChildren: 0.06,
         staggerDirection: -1,
         delayChildren: 0.3,
       },
     },
     exit: {
       transition: {
-        staggerChildren: 0.05,
-        staggerDirection: 1,
+        staggerDirection: -1,
       },
     },
   };
@@ -74,14 +73,14 @@ const Sidebar: FunctionComponent<Props> = ({ setSidebarOpen }) => {
       y: "0",
       transition: {
         ease: "circOut",
-        duration: 0.5,
+        duration: 0.8,
       },
     },
     exit: {
       y: "-120%",
       transition: {
         ease: "circOut",
-        duration: 0.5,
+        duration: 0.8,
       },
     },
   };
@@ -157,7 +156,7 @@ const Sidebar: FunctionComponent<Props> = ({ setSidebarOpen }) => {
           variants={imageHidderVariants}
         ></motion.div>
         <img
-          src="./images/sidebar.png"
+          src="/images/sidebar.png"
           className="sidebar-image"
           alt="sidebar"
         />

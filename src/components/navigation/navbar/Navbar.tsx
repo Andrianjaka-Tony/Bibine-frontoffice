@@ -53,7 +53,7 @@ const Navbar: FunctionComponent<Props> = ({
             placeholder="Recherchez cotre voiture"
           />
         </div>
-        <span className="navbar-btn">Log in</span>
+        <span className="navbar-btn">Se connecter</span>
         <HiMenuAlt4 onClick={openSidebar} className="navbar-menu" />
       </nav>
     </>
