@@ -46,7 +46,7 @@ const Announce: FunctionComponent = () => {
         "../images/announce/6.png",
       ],
       description:
-        "Ceci est ma voiture préférée mais pour cause personnelle, je dois la vendre au plus vite",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum harum, facilis doloribus temporibus dolor possimus excepturi? Quam fuga rem odit nemo nobis architecto, exercitationem quasi ratione molestias nesciunt expedita maxime harum blanditiis perferendis, voluptatem labore. Quidem, omnis! Doloribus officia quisquam dicta eum praesentium, omnis iusto voluptates vel eaque eos aperiam enim quasi totam quos repellendus unde reprehenderit dolorem dolore corrupti dolores sint? Explicabo dolorem sequi asperiores incidunt architecto adipisci consectetur rem consequuntur assumenda ab corporis dignissimos tempora debitis recusandae laboriosam, similique voluptatum, tempore, quod vero blanditiis! Assumenda natus saepe laudantium.",
       price: 1000000,
       note: 9.5,
     });
@@ -86,6 +86,12 @@ const Announce: FunctionComponent = () => {
           <p className="label">Note</p>
           <p className="value">{announce?.note}/10</p>
         </div>
+      </div>
+      <div className="announce-details">
+        <h1 className="title">A propos</h1>
+        <h2 className="subtitle">Description</h2>
+        <p className="text">{announce?.description}</p>
+        <h1 className="subtitle">Fiche technique</h1>
       </div>
       <div className="announce-images">
         {announce?.photoes.map((photo, index) => (

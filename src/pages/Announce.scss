@@ -88,6 +88,22 @@
     }
   }
 
+  &-details {
+    margin-top: 100px;
+
+    .subtitle {
+      font-family: Open sans bold;
+      font-size: 36px;
+      margin-top: 50px;
+    }
+
+    .text {
+      font-family: Open sans regular;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+  }
+
   &-images {
     margin-top: 100px;
     display: flex;

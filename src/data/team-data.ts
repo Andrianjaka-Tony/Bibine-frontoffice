@@ -1,6 +1,6 @@
 import { Team } from "../components/team/card/TeamCard";
 
-const teamsData: Team[] = [
+const teams: Team[] = [
   {
     photo: "./images/paul.png",
     name: "Paul",
@@ -27,4 +27,4 @@ const teamsData: Team[] = [
   },
 ];
 
-export default teamsData;
+export default teams;
