@@ -1,37 +1,49 @@
 .announce {
   width: 100vw;
-  padding: 40px 50px 225px 50px;
+  padding-block: 2.5rem 220px;
+
+  @media screen and (max-width: 768px) {
+    padding-block: 1.5rem 150px;
+  }
 
   &-header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
 
     &-user {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 1rem;
+
+      @media screen and (max-width: 768px) {
+        gap: 0.6rem;
+      }
 
       &-image {
-        height: 40px;
-        width: 40px;
+        height: 2.5rem;
+        width: 2.5rem;
         border-radius: 50%;
       }
 
       &-name {
         font-family: Open sans bold;
-        font-size: 18px;
+        font-size: 1.1rem;
       }
     }
 
     &-icons {
       display: flex;
-      gap: 15px;
+      gap: 1rem;
+
+      @media screen and (max-width: 768px) {
+        gap: 0.6rem;
+      }
 
       svg {
-        width: 25px;
+        width: 1.5rem;
         height: auto;
         cursor: pointer;
       }
@@ -46,26 +58,52 @@
 
   &-brand {
     font-family: Open sans regular;
-    font-size: 22px;
+    font-size: 1.4rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   &-model {
-    font-size: 72px;
+    font-size: 4.5rem;
     text-transform: uppercase;
     font-family: Open sans bold;
     line-height: 1;
+
+    .word-wrapper {
+      justify-content: center;
+    }
+
+    .space {
+      width: 0.9rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 3rem;
+      margin-top: 0.8rem;
+
+      .space {
+        width: 0.6rem;
+      }
+    }
   }
 
   &-year {
     font-family: Open sans condensed bold;
-    font-size: 22px;
+    font-size: 1.4rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
   }
 
   &-values {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 6rem;
 
     .announce-value {
       display: flex;
@@ -78,39 +116,47 @@
 
       .label {
         font-family: Open sans regular;
-        font-size: 14px;
+        font-size: 0.9rem;
       }
 
       .value {
         font-family: Open sans condensed bold;
-        font-size: 32px;
+        font-size: 2rem;
       }
     }
   }
 
   &-details {
-    margin-top: 100px;
+    margin-top: 6rem;
 
     .subtitle {
       font-family: Open sans bold;
-      font-size: 36px;
-      margin-top: 50px;
+      font-size: 2.2rem;
+      margin-top: 3rem;
     }
 
     .text {
       font-family: Open sans regular;
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 1.2rem;
+      margin-top: 0.6rem;
+
+      .sentence-wrapper {
+        gap: 0.22rem;
+      }
     }
   }
 
   &-images {
-    margin-top: 100px;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
     width: 100%;
+
+    @media screen and (max-width: 768px) {
+      gap: 1rem;
+    }
 
     &-image {
       width: 100%;

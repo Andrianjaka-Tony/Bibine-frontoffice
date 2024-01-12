@@ -7,43 +7,56 @@
 
   &-content {
     padding: 15px;
+
+    @media screen and (max-width: 768px) {
+      padding: 0.8rem;
+    }
   }
 
   &-brand,
   &-category {
     font-size: 14px;
     font-family: Open sans regular;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8rem;
+    }
   }
 
   &-model {
     font-size: 22px;
     font-family: Open sans extrabold;
     margin-top: 5px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 3px;
+      font-size: 1.4rem;
+    }
   }
 
   &-profile {
     cursor: pointer;
     width: fit-content;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     display: flex;
     align-items: center;
 
     &-photo {
-      height: 40px;
-      width: 40px;
+      height: 2.5rem;
+      aspect-ratio: 1 / 1;
       border-radius: 50%;
       object-fit: cover;
     }
 
     &-name {
-      margin-left: 10px;
-      font-size: 16px;
+      margin-left: 0.6rem;
+      font-size: 1rem;
       font-family: Open sans bold;
     }
   }
 
   &-details {
-    margin-top: 30px;
+    margin-top: 1.8rem;
     display: flex;
     justify-content: space-between;
 
@@ -68,11 +81,11 @@
   &-icons {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 1.8rem;
 
     .icon {
       cursor: pointer;
-      width: 25px;
+      width: 1.5rem;
       height: auto;
     }
   }

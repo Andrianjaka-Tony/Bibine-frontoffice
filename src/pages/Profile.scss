@@ -1,0 +1,61 @@
+.profile {
+  width: 100vw;
+  padding-block: 2.5rem 10rem;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 1.5rem;
+  }
+
+  &-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    &-user {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+
+      &-image {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+      }
+
+      &-name {
+        font-family: Open sans bold;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &-nav {
+    display: flex;
+    font-family: Open sans regular;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    position: relative;
+
+    &-border-slider {
+      position: absolute;
+      background: red;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100px;
+    }
+
+    &-item {
+      padding: 0.5rem 2rem;
+      border-bottom: 1px black solid;
+      cursor: pointer;
+      transition: color 200ms;
+
+      &.active {
+        color: red;
+      }
+    }
+  }
+}

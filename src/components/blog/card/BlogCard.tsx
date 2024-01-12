@@ -30,7 +30,9 @@ const BlogCard: FunctionComponent<Blog> = ({
         <p onClick={user.onClick} className="blog-card-content-user">
           {user.name}
         </p>
-        <p className="blog-card-content-text">{content}</p>
+        <div className="blog-card-content-text">
+          <p className="text">{content}</p>
+        </div>
       </div>
     </div>
   );

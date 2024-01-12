@@ -7,79 +7,79 @@ const blogs: Blog[] = [
       name: "Ryomen Sukuna",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Hello world!",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Fenosoa",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Avereno ilay montre ry zandry eh!",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Tafita Tinc",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Ndeha ilalao nono",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Sergio",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Zah rangah tsy kamo izany ah!",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Paul Ferdinah",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Ndao iady rangah!",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Fitahiana Roland",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Reveko Jessy ry lerony eh!",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Ando",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Yoooooo",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Aina",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Tena tafa ihany zah sy Liane misy vaika",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Mau",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Zaka ihany Grace raha misy vaika",
   },
   {
     user: {
       photo: "./images/user.png",
-      name: "Ryomen Sukuna",
+      name: "Tahiry",
       onClick: () => {},
     },
-    content: "Ce site est incroyable. Ryoiki Tenkai...",
+    content: "Milay ny fiainana eh",
   },
 ];
 

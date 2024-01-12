@@ -10,6 +10,10 @@
   width: 100vw;
   z-index: 2;
 
+  @media screen and (max-width: 768px) {
+    padding: 10px 1rem;
+  }
+
   &-logo {
     width: 50px;
     height: auto;
@@ -63,6 +67,11 @@
     font-size: 14px;
     font-family: Open sans regular;
     cursor: pointer;
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8rem;
+      margin-inline: 0.5rem;
+    }
   }
 
   &-menu {
@@ -70,5 +79,10 @@
     width: auto;
     cursor: pointer;
     opacity: 0.5;
+
+    @media screen and (max-width: 768px) {
+      height: 2rem;
+      margin-top: -1px;
+    }
   }
 }

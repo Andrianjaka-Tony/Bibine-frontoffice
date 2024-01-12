@@ -114,31 +114,31 @@ const Sidebar: FunctionComponent<Props> = ({ setSidebarOpen }) => {
       name: "Accueil",
       link: "/home",
       variants: itemVariants,
-    },
-    {
-      name: "Annonces",
-      link: "/announces",
-      variants: itemVariants,
-    },
-    {
-      name: "Messages",
-      link: "/messages",
-      variants: itemVariants,
-    },
-    {
-      name: "Favoris",
-      link: "/favorites",
-      variants: itemVariants,
+      setSidebarOpen,
     },
     {
       name: "Profil",
       link: "/profile",
       variants: itemVariants,
+      setSidebarOpen,
     },
     {
-      name: "Boutique",
-      link: "/store",
+      name: "Annonces",
+      link: "/announces",
       variants: itemVariants,
+      setSidebarOpen,
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+      variants: itemVariants,
+      setSidebarOpen,
+    },
+    {
+      name: "A propos",
+      link: "/about",
+      variants: itemVariants,
+      setSidebarOpen,
     },
   ];
 

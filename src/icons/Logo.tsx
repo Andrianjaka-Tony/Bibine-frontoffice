@@ -13,10 +13,10 @@ const Logo: FunctionComponent<Props> = (props) => {
         <text
           id="aika"
           transform="translate(96.5 150)"
-          font-size="30"
-          font-family="Sora"
-          font-weight="600"
-          letter-spacing="0.015em"
+          fontSize="30"
+          fontFamily="Sora"
+          fontWeight="600"
+          letterSpacing="0.015em"
         >
           <tspan x="-32.325" y="0">
             aika
@@ -29,8 +29,8 @@ const Logo: FunctionComponent<Props> = (props) => {
           transform="translate(-5000 -2511)"
           fill="none"
           stroke="#000"
-          stroke-linecap="square"
-          stroke-width="4"
+          strokeLinecap="square"
+          strokeWidth="4"
         />
       </g>
     </svg>
