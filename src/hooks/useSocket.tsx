@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const useSocket = ({ id, userEmail }: { id: string; userEmail: string }) => {
   // const url = `${websocketUrl}/Contact/${id}`;
-  const [stompClient, setStompClient] = useState<any>(null);
+  const [stomp, setStomp] = useState<any>(null);
 
   const connect = () => {
     const socket = new SockJS(
@@ -14,7 +14,8 @@ const useSocket = ({ id, userEmail }: { id: string; userEmail: string }) => {
     let stompClient = Stomp.over(socket);
     stompClient.debug = () => {};
     stompClient.connect({}, function () {
-      setStompClient(stompClient);
+      setStomp(stompClient);
+      console.log(stomp);
       console.log("Connected");
       stompClient.subscribe("/user/topic/private-messages", (message: any) => {
         let data = JSON.parse(message.body);
