@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import "./TeamCard.scss";
+import WordWrapper from "../../wrapper/word/WordWrapper";
 
 export interface Team {
   photo: string;
@@ -18,9 +19,15 @@ const TeamCard: FunctionComponent<Team> = ({
     <div className="team-card">
       <img src={photo} className="team-card-photo" alt={name} />
       <div className="team-card-details">
-        <p className="team-card-details-post">{post}</p>
-        <p className="team-card-details-name">{name}</p>
-        <p className="team-card-details-numero">ETU 00{numero}</p>
+        <p className="team-card-details-post">
+          <WordWrapper className="" word={post} />
+        </p>
+        <p className="team-card-details-name">
+          <WordWrapper className="" word={name} />
+        </p>
+        <p className="team-card-details-numero">
+          <WordWrapper className="" word={`ETU 00${numero}`} />
+        </p>
       </div>
     </div>
   );

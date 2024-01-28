@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useLayoutEffect, useState } from "react";
 import { BsSend } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
 import announcesData from "../data/announce-data";
@@ -30,7 +30,7 @@ const Announce: FunctionComponent = () => {
   const [announce, setAnnounce] = useState<AnnounceProp>();
   const [announces, setAnnounces] = useState<AnnounceInterface[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setUser({
       id: "1",
       name: "Ryomen Sukuna",
@@ -39,7 +39,7 @@ const Announce: FunctionComponent = () => {
     setAnnounces(announcesData);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setAnnounce({
       brand: "Fruit",
       model: "Banane Skyline Turbo 1500",

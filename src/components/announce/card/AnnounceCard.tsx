@@ -3,6 +3,7 @@ import "./AnnounceCard.scss";
 import PriceParser from "../../../helpers/PriceHelper";
 import Go from "../../../icons/Go";
 import Favori from "../../../icons/Favori";
+import { useNavigate } from "react-router-dom";
 
 export interface Announce {
   photoes: string[];
@@ -37,6 +38,8 @@ const AnnounceCard: FunctionComponent<Announce> = ({
   onFavorite = () => {},
   onClick = () => {},
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="announce-card">
       <img
@@ -70,7 +73,12 @@ const AnnounceCard: FunctionComponent<Announce> = ({
         </div>
         <div className="announce-card-icons">
           <Favori className="icon" onClick={onFavorite} />
-          <Go className="icon" onClick={onClick} />
+          <Go
+            className="icon"
+            onClick={() => {
+              navigate("/announce/2");
+            }}
+          />
         </div>
       </div>
     </div>

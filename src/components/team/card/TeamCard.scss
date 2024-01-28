@@ -29,8 +29,12 @@
 
     &-post {
       font-family: Open sans regular;
-      font-size: 0.8rem;
+      font-size: 1rem;
       margin-bottom: 0.6rem;
+
+      .word-wrapper .space {
+        width: 0.25rem;
+      }
     }
 
     &-name {
@@ -41,7 +45,11 @@
 
     &-numero {
       font-family: Open sans regular;
-      font-size: 0.8rem;
+      font-size: 1rem;
+
+      .word-wrapper .space {
+        width: 0.25rem;
+      }
     }
   }
 }

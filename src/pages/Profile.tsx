@@ -8,8 +8,11 @@ import {
 import { motion } from "framer-motion";
 import "./Profile.scss";
 import { BsSend } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Profile: FunctionComponent = () => {
+  const navigate = useNavigate();
+
   const [user] = useState({
     id: "1",
     name: "Ryomen Sukuna",
@@ -53,7 +56,11 @@ const Profile: FunctionComponent = () => {
           <span className="profile-header-user-name">{user?.name}</span>
         </div>
         <div className="announce-header-icons">
-          <BsSend />
+          <BsSend
+            onClick={() => {
+              navigate(`/message/${user.id}`);
+            }}
+          />
         </div>
       </div>
       <h1 className="title">Annonces</h1>
