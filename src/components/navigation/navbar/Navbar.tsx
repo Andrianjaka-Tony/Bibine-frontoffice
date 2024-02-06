@@ -50,7 +50,7 @@ const Navbar: FunctionComponent<Props> = ({
             type="text"
             name="navbar-search-input"
             id="navbar-search-input"
-            placeholder="Recherchez cotre voiture"
+            placeholder="Recherchez votre voiture"
           />
         </div>
         <span className="navbar-btn">Se connecter</span>

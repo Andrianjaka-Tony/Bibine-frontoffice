@@ -1,13 +1,15 @@
 import { FunctionComponent, useLayoutEffect, useState } from "react";
 import { BsSend } from "react-icons/bs";
 import { FaSackDollar } from "react-icons/fa6";
-import announcesData from "../data/announce-data";
 import "./Announce.scss";
 import AnnounceList from "../components/announce/list/AnnounceList";
 import Link from "../components/link/Link";
 import { Announce as AnnounceInterface } from "../components/announce/card/AnnounceCard";
 import WordWrapper from "../components/wrapper/word/WordWrapper";
 import Counter from "../components/counter/Counter";
+import { useNavigate, useParams } from "react-router-dom";
+import api from "../helpers/url";
+import mapAnnounces from "../helpers/mapAnnounces";
 
 interface User {
   id: string;
@@ -26,38 +28,36 @@ interface AnnounceProp {
 }
 
 const Announce: FunctionComponent = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
   const [user, setUser] = useState<User>();
   const [announce, setAnnounce] = useState<AnnounceProp>();
   const [announces, setAnnounces] = useState<AnnounceInterface[]>([]);
 
   useLayoutEffect(() => {
-    setUser({
-      id: "1",
-      name: "Ryomen Sukuna",
-      photo: "../images/user.png",
-    });
-    setAnnounces(announcesData);
-  }, []);
-
-  useLayoutEffect(() => {
-    setAnnounce({
-      brand: "Fruit",
-      model: "Banane Skyline Turbo 1500",
-      year: 2014,
-      photoes: [
-        "../images/announce/1.png",
-        "../images/announce/2.png",
-        "../images/announce/3.png",
-        "../images/announce/4.png",
-        "../images/announce/5.png",
-        "../images/announce/6.png",
-      ],
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum harum, facilis doloribus temporibus dolor possimus excepturi? Quam fuga rem odit nemo nobis architecto, exercitationem quasi ratione molestias nesciunt expedita maxime harum blanditiis perferendis, voluptatem labore. Quidem, omnis! Doloribus officia quisquam dicta eum praesentium, omnis iusto voluptates vel eaque eos aperiam enim quasi totam quos repellendus unde reprehenderit dolorem dolore corrupti dolores sint? Explicabo dolorem sequi asperiores incidunt architecto adipisci consectetur rem consequuntur assumenda ab corporis dignissimos tempora debitis recusandae laboriosam, similique voluptatum, tempore, quod vero blanditiis! Assumenda natus saepe laudantium.",
-      price: 1000000,
-      note: 9.5,
-    });
-  }, []);
+    const fetchAnnounce = async () => {
+      let response = await fetch(`${api}/bibine/actu/annonces/${id}`);
+      response = await response.json();
+      let data = response as any;
+      data = data.data;
+      data = [data];
+      let newAnnounce: AnnounceInterface = mapAnnounces(data, navigate)[0];
+      const { brand, model, year, photoes, description, price, note, user } =
+        newAnnounce;
+      setAnnounce({
+        brand,
+        model,
+        year: parseInt(`${year}`.split("-")[0]),
+        photoes,
+        description,
+        price,
+        note,
+      });
+      setUser(user);
+    };
+    fetchAnnounce();
+  }, [id, navigate]);
 
   return (
     <>
@@ -88,13 +88,13 @@ const Announce: FunctionComponent = () => {
         <div className="announce-values">
           <div className="announce-value">
             <p className="label">Prix</p>
-            <p className="value">
+            <div className="value">
               <Counter
                 from={0}
                 to={announce ? announce?.price : 0}
                 isPrice={true}
               />
-            </p>
+            </div>
           </div>
           <div className="announce-value">
             <p className="label">Note</p>

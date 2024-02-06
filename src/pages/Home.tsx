@@ -1,7 +1,6 @@
 import { FunctionComponent, useLayoutEffect, useState } from "react";
 import Hero from "../components/hero/Hero";
 import "./Home.scss";
-import announcesData from "../data/announce-data";
 import blogsData from "../data/blog-data";
 import { Announce } from "../components/announce/card/AnnounceCard";
 import AnnounceList from "../components/announce/list/AnnounceList";
@@ -11,6 +10,9 @@ import BlogList from "../components/blog/list/BlogList";
 import { Team } from "../components/team/card/TeamCard";
 import teamsData from "../data/team-data";
 import TeamList from "../components/team/list/TeamList";
+import api from "../helpers/url";
+import { useNavigate } from "react-router-dom";
+import mapAnnounces from "../helpers/mapAnnounces";
 
 interface Props {}
 
@@ -19,11 +21,22 @@ export const Home: FunctionComponent<Props> = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);
 
+  const navigate = useNavigate();
+
   useLayoutEffect(() => {
-    setAnnounces(announcesData);
+    const fetchAnnounces = async () => {
+      let response = await fetch(
+        `${api}/bibine/actu/pagination/annonces?offset=0&limit=6`
+      );
+      response = await response.json();
+      const data = response as any;
+      setAnnounces(mapAnnounces(data.data, navigate));
+    };
+
+    fetchAnnounces();
     setBlogs(blogsData);
     setTeams(teamsData);
-  }, []);
+  }, [navigate]);
 
   return (
     <>
