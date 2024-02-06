@@ -56,7 +56,17 @@ const Announce: FunctionComponent = () => {
       });
       setUser(user);
     };
+    const fetchOtherAnnounces = async () => {
+      let response = await fetch(
+        `${api}/bibine/actu/pagination/annonces?offset=0&limit=6`
+      );
+      response = await response.json();
+      const data = response as any;
+      setAnnounces(mapAnnounces(data.data, navigate));
+    };
+
     fetchAnnounce();
+    fetchOtherAnnounces();
   }, [id, navigate]);
 
   return (
