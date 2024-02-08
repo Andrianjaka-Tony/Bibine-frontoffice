@@ -8,11 +8,13 @@ import "./Navbar.scss";
 interface Props {
   isSidebarOpen: boolean;
   setSidebarOpen: Dispatch<React.SetStateAction<boolean>>;
+  setLoginOpen: Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Navbar: FunctionComponent<Props> = ({
   isSidebarOpen,
   setSidebarOpen,
+  setLoginOpen,
 }) => {
   const openSidebar = () => {
     setSidebarOpen(true);
@@ -53,7 +55,14 @@ const Navbar: FunctionComponent<Props> = ({
             placeholder="Recherchez votre voiture"
           />
         </div>
-        <span className="navbar-btn">Se connecter</span>
+        <span
+          onClick={() => {
+            setLoginOpen(true);
+          }}
+          className="navbar-btn"
+        >
+          Se connecter
+        </span>
         <HiMenuAlt4 onClick={openSidebar} className="navbar-menu" />
       </nav>
     </>

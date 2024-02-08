@@ -1,0 +1,85 @@
+.login {
+  background: rgba(0, 0, 0, 0.562);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    padding: 1.2rem;
+    background: white;
+    border-radius: 2%;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      height: 1rem;
+      width: auto;
+    }
+
+    .logo-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+      margin-top: 1rem;
+    }
+
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      font-family: Open sans bold;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .input {
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      margin-top: 0.5rem;
+
+      label {
+        font-family: Open sans regular;
+        font-size: 0.7rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0 10px;
+        background: rgb(236, 236, 236);
+        border: none;
+        outline: none;
+        height: 40px;
+      }
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 45px;
+      background: #333;
+      font-family: Open sans bold;
+      color: #fff;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+  }
+}

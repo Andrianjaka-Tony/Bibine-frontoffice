@@ -27,6 +27,15 @@ interface AnnounceProp {
   note: number;
 }
 
+interface Details {
+  consommation: any;
+  couleur: any;
+  kilometre: any;
+  localisation: any;
+  maintenance: any[];
+  motor: any;
+}
+
 const Announce: FunctionComponent = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -34,6 +43,7 @@ const Announce: FunctionComponent = () => {
   const [user, setUser] = useState<User>();
   const [announce, setAnnounce] = useState<AnnounceProp>();
   const [announces, setAnnounces] = useState<AnnounceInterface[]>([]);
+  const [details, setDetails] = useState<Details>();
 
   useLayoutEffect(() => {
     const fetchAnnounce = async () => {
@@ -42,6 +52,25 @@ const Announce: FunctionComponent = () => {
       let data = response as any;
       data = data.data;
       data = [data];
+
+      const {
+        consommation,
+        couleur,
+        kilometre,
+        localisation,
+        maintenance,
+        motor,
+      } = data[0];
+
+      setDetails({
+        consommation,
+        couleur,
+        kilometre,
+        localisation: localisation.nom,
+        maintenance: maintenance.map((m: any) => m.nom),
+        motor: motor.nom,
+      });
+
       let newAnnounce: AnnounceInterface = mapAnnounces(data, navigate)[0];
       const { brand, model, year, photoes, description, price, note, user } =
         newAnnounce;
@@ -115,7 +144,33 @@ const Announce: FunctionComponent = () => {
           <h1 className="title">A propos</h1>
           <h2 className="subtitle">Description</h2>
           <div className="text">{announce?.description}</div>
-          <h1 className="subtitle">Fiche technique</h1>
+          <h1 className="subtitle">Détails</h1>
+          <div className="row">
+            <div className="label">Moteur</div>
+            <div className="value">{details?.motor}</div>
+          </div>
+          <div className="row">
+            <div className="label">Consommation</div>
+            <div className="value">{details?.consommation} km / litre</div>
+          </div>
+          <div className="row">
+            <div className="label">Couleur</div>
+            <div className="value">{details?.couleur || "Inconnu"}</div>
+          </div>
+          <div className="row">
+            <div className="label">Kilometrage</div>
+            <div className="value">{details?.kilometre}</div>
+          </div>
+          <div className="row">
+            <div className="label">Localisation</div>
+            <div className="value">{details?.localisation}</div>
+          </div>
+          <h2 className="subtitle">Maintenances</h2>
+          {details?.maintenance.map((m, index) => (
+            <div className="row" key={index}>
+              <div className="label">{m}</div>
+            </div>
+          ))}
         </div>
         <div className="announce-images">
           {announce?.photoes.map((photo, index) => (
