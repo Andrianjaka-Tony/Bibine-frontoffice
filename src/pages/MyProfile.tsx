@@ -36,7 +36,7 @@ export default function MyProfile() {
 
   useEffect(() => {
     connect();
-  }, [user.email]);
+  }, []);
 
   useEffect(() => {
     if (firstPage.current) {
@@ -97,7 +97,7 @@ export default function MyProfile() {
     };
 
     fetchContacts();
-  }, []);
+  }, [user.email]);
 
   const switchPage: MouseEventHandler = (event) => {
     const element = event.currentTarget as Element;
