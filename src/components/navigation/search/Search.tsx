@@ -9,17 +9,6 @@ interface Props {
 }
 
 const Search: FunctionComponent<Props> = ({ setSearchOpen }) => {
-  const [brands, setBrands] = useState<any[]>([]);
-  const [couleurs, setCouleurs] = useState<any[]>([]);
-  const [modeles, setModeles] = useState<any[]>([]);
-  const [types, setTypes] = useState<any[]>([]);
-  const [dateInf, setDateInf] = useState<any>("");
-  const [dateSup, setDateSup] = useState<any>("");
-  const [infEtat, setInfEtat] = useState<any>("");
-  const [supEtat, setSupEtat] = useState<any>("");
-  const [infMontant, setInfMontant] = useState<any>("");
-  const [supMontant, setSupMontant] = useState<any>("");
-
   const [brandsData, setBrandsData] = useState<any[]>([]);
   const [couleursData, setCouleursData] = useState<any[]>([]);
   const [modelesData, setModelesData] = useState<any[]>([]);
