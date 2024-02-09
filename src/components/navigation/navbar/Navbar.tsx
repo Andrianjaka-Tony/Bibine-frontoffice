@@ -11,12 +11,14 @@ interface Props {
   isSidebarOpen: boolean;
   setSidebarOpen: Dispatch<React.SetStateAction<boolean>>;
   setLoginOpen: Dispatch<React.SetStateAction<boolean>>;
+  setSearchOpen: Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Navbar: FunctionComponent<Props> = ({
   isSidebarOpen,
   setSidebarOpen,
   setLoginOpen,
+  setSearchOpen,
 }) => {
   const navigate = useNavigate();
 
@@ -60,16 +62,19 @@ const Navbar: FunctionComponent<Props> = ({
       <nav className="navbar">
         <Logo className="navbar-logo" />
         <div className="navbar-search">
-          <span className="navbar-search-icon">
-            <CiSearch />
-          </span>
           <input
+            onFocus={() => {
+              setSearchOpen(true);
+            }}
             className="navbar-search-input"
             type="text"
             name="navbar-search-input"
             id="navbar-search-input"
             placeholder="Recherchez votre voiture"
           />
+          <span className="navbar-search-icon">
+            <CiSearch />
+          </span>
         </div>
         {!isLogged && (
           <span
@@ -85,7 +90,7 @@ const Navbar: FunctionComponent<Props> = ({
         {isLogged && (
           <span
             onClick={() => {
-              navigate(`/profile/${user.id}`);
+              navigate(`/my-profile`);
             }}
           >
             <img className="user-image" alt="user" src={user.profile} />

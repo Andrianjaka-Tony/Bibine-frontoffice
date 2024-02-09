@@ -118,7 +118,7 @@ const Sidebar: FunctionComponent<Props> = ({ setSidebarOpen }) => {
     },
     {
       name: "Profil",
-      link: "/profile",
+      link: "/my-profile",
       variants: itemVariants,
       setSidebarOpen,
     },

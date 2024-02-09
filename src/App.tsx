@@ -4,7 +4,7 @@ import Lenis from "@studio-freight/lenis";
 import Navigation from "./components/navigation/Navigation";
 import Announce from "./pages/Announce";
 import Profile from "./pages/Profile";
-import Message from "./pages/Message";
+import MyProfile from "./pages/MyProfile";
 
 function App() {
   const location = useLocation();
@@ -24,8 +24,8 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/my-profile" element={<MyProfile />} />
         <Route path="/profile/:id" element={<Profile />} />
-        <Route path="/message/:id" element={<Message />} />
         <Route path="/announce/:id" element={<Announce />} />
       </Routes>
     </>
