@@ -36,7 +36,7 @@ export default function MyProfile() {
 
   useEffect(() => {
     connect();
-  }, []);
+  }, [user.email]);
 
   useEffect(() => {
     if (firstPage.current) {
