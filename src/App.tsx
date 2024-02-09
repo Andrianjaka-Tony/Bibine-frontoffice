@@ -24,7 +24,7 @@ function App() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:id" element={<Profile />} />
         <Route path="/message/:id" element={<Message />} />
         <Route path="/announce/:id" element={<Announce />} />
       </Routes>

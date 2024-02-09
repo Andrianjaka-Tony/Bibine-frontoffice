@@ -102,7 +102,12 @@ const Announce: FunctionComponent = () => {
     <>
       <div className="section announce">
         <div className="announce-header">
-          <div className="announce-header-user">
+          <div
+            onClick={() => {
+              navigate(`/profile/${user?.id}`);
+            }}
+            className="announce-header-user"
+          >
             <img
               src={user?.photo}
               alt={user?.name}
@@ -155,7 +160,7 @@ const Announce: FunctionComponent = () => {
           </div>
           <div className="row">
             <div className="label">Couleur</div>
-            <div className="value">{details?.couleur || "Inconnu"}</div>
+            <div className="value">{details?.couleur.nom || "Inconnu"}</div>
           </div>
           <div className="row">
             <div className="label">Kilometrage</div>
@@ -168,7 +173,7 @@ const Announce: FunctionComponent = () => {
           <h2 className="subtitle">Maintenances</h2>
           {details?.maintenance.map((m, index) => (
             <div className="row" key={index}>
-              <div className="label">{m}</div>
+              <div className="label">{m.nom}</div>
             </div>
           ))}
         </div>

@@ -26,7 +26,7 @@ export const Home: FunctionComponent<Props> = () => {
   useLayoutEffect(() => {
     const fetchAnnounces = async () => {
       let response = await fetch(
-        `${api}/bibine/actu/pagination/annonces?offset=0&limit=6`
+        `${api}/bibine/actu/annonces/recentes?offset=0&limit=6`
       );
       response = await response.json();
       const data = response as any;
