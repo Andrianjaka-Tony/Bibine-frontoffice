@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Dispatch, FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import api from "../../../helpers/url";
+import storage from "../../../helpers/storageHelper";
 
 interface Props {
   setLoginOpen: Dispatch<React.SetStateAction<boolean>>;
@@ -24,8 +25,11 @@ export default function Login({ setLoginOpen }: Props) {
       body: JSON.stringify(data),
     });
     if (response.ok) {
-      console.log("ok");
-    } else {
+      response = await response.json();
+      let responseData = response as any;
+      const { token, user } = responseData;
+      sessionStorage.setItem(storage.token, token);
+      sessionStorage.setItem(storage.user, JSON.stringify(user));
     }
   };
 

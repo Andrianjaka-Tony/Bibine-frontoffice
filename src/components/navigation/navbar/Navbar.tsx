@@ -1,9 +1,11 @@
-import { Dispatch, FunctionComponent } from "react";
+import { Dispatch, FunctionComponent, useEffect, useState } from "react";
 import Logo from "../../../icons/Logo";
 import { CiSearch } from "react-icons/ci";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { motion } from "framer-motion";
 import "./Navbar.scss";
+import storage from "../../../helpers/storageHelper";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   isSidebarOpen: boolean;
@@ -16,6 +18,20 @@ const Navbar: FunctionComponent<Props> = ({
   setSidebarOpen,
   setLoginOpen,
 }) => {
+  const navigate = useNavigate();
+
+  const [isLogged, setLogged] = useState<boolean>(false);
+  const [user, setUser] = useState<any>({});
+  const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {
+    const userStorage = sessionStorage.getItem(storage.user);
+    if (userStorage) {
+      setUser(JSON.parse(userStorage));
+      setLogged(true);
+    }
+  }, [count]);
+
   const openSidebar = () => {
     setSidebarOpen(true);
   };
@@ -55,14 +71,26 @@ const Navbar: FunctionComponent<Props> = ({
             placeholder="Recherchez votre voiture"
           />
         </div>
-        <span
-          onClick={() => {
-            setLoginOpen(true);
-          }}
-          className="navbar-btn"
-        >
-          Se connecter
-        </span>
+        {!isLogged && (
+          <span
+            onClick={() => {
+              setLoginOpen(true);
+              setCount(count + 1);
+            }}
+            className="navbar-btn"
+          >
+            Se connecter
+          </span>
+        )}
+        {isLogged && (
+          <span
+            onClick={() => {
+              navigate(`/profile/${user.id}`);
+            }}
+          >
+            <img className="user-image" alt="user" src={user.profile} />
+          </span>
+        )}
         <HiMenuAlt4 onClick={openSidebar} className="navbar-menu" />
       </nav>
     </>

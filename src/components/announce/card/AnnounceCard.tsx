@@ -1,9 +1,16 @@
-import { FunctionComponent, MouseEventHandler } from "react";
+import {
+  FunctionComponent,
+  MouseEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import "./AnnounceCard.scss";
 import PriceParser from "../../../helpers/PriceHelper";
 import Go from "../../../icons/Go";
 import Favori from "../../../icons/Favori";
 import { useNavigate } from "react-router-dom";
+import storage from "../../../helpers/storageHelper";
+import api from "../../../helpers/url";
 
 export interface Announce {
   id: string;
@@ -23,9 +30,11 @@ export interface Announce {
   onFavorite: MouseEventHandler;
   onClick: MouseEventHandler;
   description: string;
+  favoris: number[];
 }
 
 const AnnounceCard: FunctionComponent<Announce> = ({
+  id = "",
   photoes = [],
   brand = "",
   model = "",
@@ -42,8 +51,58 @@ const AnnounceCard: FunctionComponent<Announce> = ({
   onFavorite = () => {},
   onClick = () => {},
   description = "",
+  favoris = [0],
 }) => {
   const navigate = useNavigate();
+
+  const [userLogged, setUserLogged] = useState<any>({});
+  const [isLogged, setLogged] = useState<boolean>(false);
+  const [className, setClassName] = useState("");
+
+  useEffect(() => {
+    const userStorage = sessionStorage.getItem(storage.user);
+    if (userStorage) {
+      setUserLogged(JSON.parse(userStorage));
+      setLogged(true);
+    }
+  }, []);
+
+  const favorite = async () => {
+    if (isLogged && !favoris.includes(parseInt(userLogged.id))) {
+      await fetch(
+        `${api}/bibine/user/${userLogged.id}/annonces_favoris/${id}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem(storage.token)}`,
+          },
+        }
+      );
+      setClassName("icon active");
+    }
+    if (isLogged && favoris.includes(parseInt(userLogged.id))) {
+      await fetch(
+        `${api}/bibine/user/${userLogged.id}/annonces_favoris/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${sessionStorage.getItem(storage.token)}`,
+          },
+        }
+      );
+      setClassName("icon");
+    }
+  };
+
+  useEffect(() => {
+    const favoriteClassName = () => {
+      if (isLogged && favoris.includes(parseInt(userLogged.id))) {
+        return "icon active";
+      }
+      return "icon";
+    };
+    setClassName(favoriteClassName());
+  }, [userLogged.id, favoris, isLogged]);
 
   return (
     <div className="announce-card">
@@ -82,7 +141,7 @@ const AnnounceCard: FunctionComponent<Announce> = ({
           </span>
         </div>
         <div className="announce-card-icons">
-          <Favori className="icon" onClick={onFavorite} />
+          <Favori className={className} onClick={favorite} />
           <Go className="icon" onClick={onClick} />
         </div>
       </div>

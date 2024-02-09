@@ -19,6 +19,7 @@ const mapAnnounces = (response: any, navigate: any) => {
       navigate(`/announce/${item.id}`);
     },
     description: item.description,
+    favoris: item.favoris,
   }));
 };
 

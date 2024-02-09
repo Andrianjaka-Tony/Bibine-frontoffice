@@ -85,9 +85,10 @@ const Announce: FunctionComponent = () => {
       });
       setUser(user);
     };
+
     const fetchOtherAnnounces = async () => {
       let response = await fetch(
-        `${api}/bibine/actu/pagination/annonces?offset=0&limit=6`
+        `${api}/bibine/actu/annonces/recentes?offset=0&limit=6`
       );
       response = await response.json();
       const data = response as any;
@@ -160,7 +161,9 @@ const Announce: FunctionComponent = () => {
           </div>
           <div className="row">
             <div className="label">Couleur</div>
-            <div className="value">{details?.couleur.nom || "Inconnu"}</div>
+            <div className="value">
+              {details?.couleur?.nom || "Non précisé"}
+            </div>
           </div>
           <div className="row">
             <div className="label">Kilometrage</div>
@@ -189,7 +192,7 @@ const Announce: FunctionComponent = () => {
         </div>
       </div>
       <section className="section home-section announce-list-section">
-        <h2 className="title">Annonces similaires</h2>
+        <h2 className="title">Nouveautés</h2>
         <AnnounceList announces={announces} />
         <div className="hero-btn">
           <Link onClick={() => {}} text={"Voir plus"} />
